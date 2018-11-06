@@ -1,0 +1,1 @@
+delete from tmp_prt_sales;

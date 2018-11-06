@@ -1,0 +1,1 @@
+delete from prt_member;

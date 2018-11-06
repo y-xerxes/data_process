@@ -1,0 +1,11 @@
+{
+    "fetch_size": 1024,
+    "target_columns": [
+        "event_name",
+        "event_date"
+    ],
+    "target_tables": [
+        "ss_tmp"
+    ],
+    "task_priority": 6
+}

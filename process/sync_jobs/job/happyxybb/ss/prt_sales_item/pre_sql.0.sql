@@ -1,0 +1,1 @@
+delete from prt_sales_item;

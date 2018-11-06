@@ -1,0 +1,12 @@
+{
+    "fetch_size": 1024,
+    "target_columns": [
+        "guider_code",
+        "guider_name",
+        "shop_codes",
+        "status"
+    ],
+    "target_tables": [
+        "tmp_guider"
+    ]
+}

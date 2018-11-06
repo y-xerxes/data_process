@@ -1,0 +1,13 @@
+{
+    "fetch_size": 1024,
+    "target_columns": [
+        "dim_date_id",
+        "product_code",
+        "shop_code",
+        "stock_qty",
+        "updated_at"
+    ],
+    "target_tables": [
+        "prt_stock"
+    ]
+}
