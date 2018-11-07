@@ -27,7 +27,6 @@ class ParallelingPrtSaleLoader(ParallelingRetailerDataLoader):
                ps.discount_amount,
                ps.nrp_amount
           FROM {{retailer_database_context.dw_name}}.prt_sales ps
-         # where ps.date_id = {{dim_date_id}}
         """
         super(ParallelingPrtSaleLoader, self).__init__(data_context=data_context,
                                                        retailer_database_contexts=retailer_database_contexts,
@@ -50,5 +49,5 @@ class ParallelingSCGLoader(ParallelingRetailerDataLoader):
         """
         super(ParallelingSCGLoader, self).__init__(data_context=data_context,
                                                    retailer_database_contexts=retailer_database_contexts,
-                                                   tag="buz",
+                                                   tag="retailer",
                                                    sql_template=sql_template)
