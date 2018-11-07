@@ -3,18 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1382de2e-79fc-4007-8803-eb62d595da37" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/buz/retailer_statistics/calculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/buz/retailer_statistics/calculator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/buz/retailer_statistics/loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/buz/retailer_statistics/loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/buz/retailer_statistics/stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/buz/retailer_statistics/stage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/process/derby.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/db.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/log/log.ctrl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/log/log1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/log/logmirror.ctrl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c180.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c180.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c191.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c191.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c1a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c1a1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c1b1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c1b1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -65,13 +54,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stage.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="stage.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/process/buz/retailer_statistics/stage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="37" column="54" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="54" />
+            <state relative-caret-position="360">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test.rb">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -104,7 +98,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/streaming_helper.py" />
         <option value="$PROJECT_DIR$/service/base_service.py" />
         <option value="$PROJECT_DIR$/runner.py" />
         <option value="$PROJECT_DIR$/run_streaming.py" />
@@ -155,6 +148,7 @@
         <option value="$PROJECT_DIR$/process/buz/retailer_statistics/calculator.py" />
         <option value="$PROJECT_DIR$/process/buz/retailer_statistics/helper.py" />
         <option value="$PROJECT_DIR$/process/buz/retailer_statistics/stage.py" />
+        <option value="$PROJECT_DIR$/test.rb" />
       </list>
     </option>
   </component>
@@ -183,24 +177,6 @@
             <path>
               <item name="data_process" type="b2602c69:ProjectViewProjectNode" />
               <item name="data_process" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_process" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data_process" type="462c0819:PsiDirectoryNode" />
-              <item name="process" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_process" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data_process" type="462c0819:PsiDirectoryNode" />
-              <item name="process" type="462c0819:PsiDirectoryNode" />
-              <item name="buz" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_process" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data_process" type="462c0819:PsiDirectoryNode" />
-              <item name="process" type="462c0819:PsiDirectoryNode" />
-              <item name="buz" type="462c0819:PsiDirectoryNode" />
-              <item name="retailer_statistics" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -426,7 +402,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/util/__init__.py" />
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -746,10 +721,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/process/buz/retailer_statistics/stage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="37" column="54" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="54" />
+        <state relative-caret-position="360">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.rb">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
