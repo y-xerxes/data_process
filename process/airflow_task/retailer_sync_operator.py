@@ -187,3 +187,94 @@ class RetailerSyncJobExecutor(object):
 
     def _build_increment_sync_local_query_pit(self, max_value, str):
         return self._build_increment_sync_local_query_pit(max_value=max_value, field_name=self.local_field)
+
+
+class PlanDataSyncOperator(BaseOperator):
+    @apply_defaults
+    def __init__(self, org_code: str, **kwargs):
+        super(PlanDataSyncOperator, self).__init__(**kwargs)
+        self.org_code = org_code
+        self._maintenance_session = None
+        self._database_config = None
+        self._retailer_config = None
+        self.plan_sync_jobs = []
+
+    def execute(self, context):
+        self._load_plan_sync_jobs()
+        self._execute_job_sync()
+
+    @property
+    def database_config(self) -> dict:
+        if self._database_config is None:
+            self._database_config = DatabaseConfig.current_config(self.maintenance_session)
+        return self._database_config
+
+    @property
+    def maintenance_session(self) -> Session:
+        if self._maintenance_session is None:
+            self._maintenance_session = BaseService.initialize_maintenance_objects()
+        return self._maintenance_session
+
+    @property
+    def retailer_config(self) -> RetailerConfig:
+        if self._retailer_config is None:
+            self._retailer_config = self.maintenance_session.query(RetailerConfig)\
+                .filter(RetailerConfig.org_code == self.org_code).first()
+            return self._retailer_config
+
+    def _load_plan_sync_jobs(self):
+        self.plan_sync_jobs = self.maintenance_session.query(RetailerSyncJob) \
+                        .filter(RetailerSyncJob.org_code == self.org_code).filter(RetailerSyncJob.mode == "plan").all()
+
+    def _execute_job_sync(self):
+        for plan_sync_job in self.plan_sync_jobs:
+            PlanSyncJobExecutor(
+                maintenance_session=self.maintenance_session,
+                database_config=self.database_config,
+                retailer_config=self.retailer_config,
+                plan_sync_job=plan_sync_job
+            ).exec_job()
+
+
+class PlanSyncJobExecutor(object):
+    def __init__(self,
+                 maintenance_session: Session,
+                 database_config: Dict,
+                 retailer_config: RetailerConfig,
+                 plan_sync_job: RetailerSyncJob):
+        super(PlanSyncJobExecutor, self).__init__()
+        self.maintenance_session = maintenance_session
+        self.database_config = database_config
+        self.retailer_config = retailer_config
+        self.plan_sync_job = plan_sync_job
+        self.remote_field = None
+        self.local_field = None
+        self.notify_change = False
+        self.datax_service_host = self.database_config.get("datax_service_host", None)
+
+    def exec_job(self):
+        self.read_config()
+        if self.is_support_increment_sync():
+            self._increment_sync()
+        else:
+            self._direct_sync(self.plan_sync_job.query_sql)
+
+    def read_config(self):
+        """
+        读取增量同步相关的字段数据
+        :return:
+        """
+        pass
+
+    def is_support_increment_sync(self):
+        """
+        判断是否可以做增量同步
+        :return:
+        """
+        pass
+
+    def _increment_sync(self):
+        pass
+
+    def _direct_sync(self, query_sql: List[str]):
+        pass
