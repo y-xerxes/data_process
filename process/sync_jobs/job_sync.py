@@ -58,9 +58,13 @@ class EnvSyncDirectory(object):
                 # if os.path.isdir(join(self.path, org_dir.name, "sqls")):
                 #     sql_scanner = SQLScanner(org_code=org_code, path=join(self.path, org_dir.name, "sqls"))
                 #     sql_scanner.scan_sqls(self.connection)
-                if os.path.isdir(join(self.path, org_dir.name, "ss")):
-                    ss_tasks = TaskScanner(org_code=org_code, mode="ss",
-                                           path=join(self.path, org_dir.name, "ss")).scan_tasks(self.connection)
+                # if os.path.isdir(join(self.path, org_dir.name, "ss")):
+                #     ss_tasks = TaskScanner(org_code=org_code, mode="ss",
+                #                            path=join(self.path, org_dir.name, "ss")).scan_tasks(self.connection)
+                #     self.tasks.extend(ss_tasks)
+                if os.path.isdir(join(self.path, org_dir.name, "plan")):
+                    ss_tasks = TaskScanner(org_code=org_code, mode="plan",
+                                           path=join(self.path, org_dir.name, "plan")).scan_tasks(self.connection)
                     self.tasks.extend(ss_tasks)
 
 

@@ -91,7 +91,6 @@ class RetailerSyncOperator(BaseOperator):
         return self._retailer_config
 
 
-
 class RetailerSyncJobExecutor(object):
     """
     从RetailerSyncJob中剥离出增量同步相关的机制, 做更多的功能:
@@ -189,6 +188,7 @@ class RetailerSyncJobExecutor(object):
         return self._build_increment_sync_local_query_pit(max_value=max_value, field_name=self.local_field)
 
 
+
 class PlanDataSyncOperator(BaseOperator):
     @apply_defaults
     def __init__(self, org_code: str, **kwargs):
@@ -262,19 +262,28 @@ class PlanSyncJobExecutor(object):
     def read_config(self):
         """
         读取增量同步相关的字段数据
-        :return:
         """
-        pass
+        if self.plan_sync_job.increment_config is not None and \
+                len(self.plan_sync_job.increment_config.keys()) > 0:
+            self.remote_field = self.plan_sync_job.increment_config.get("remote_field", None)
+            self.local_field = self.plan_sync_job.increment_config.get("local_field", None)
+            self.notify_change = self.plan_sync_job.increment_config.get("notify_change", False)
 
     def is_support_increment_sync(self):
         """
         判断是否可以做增量同步
         :return:
         """
-        pass
+        return self.remote_field is not None and self.local_field is not None
 
     def _increment_sync(self):
         pass
 
     def _direct_sync(self, query_sql: List[str]):
-        pass
+        datax_job = self.plan_sync_job.datax_config(
+            retailer_config=self.retailer_config,
+            config=self.database_config,
+            query_sql=query_sql
+        )
+        print(datax_job)
+        # DataxServiceHelper.exec_datax_job(job_config=datax_job, datax_service_host=self.datax_service_host)

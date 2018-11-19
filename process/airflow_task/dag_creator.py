@@ -29,7 +29,7 @@ def create_retailer_dag(org_code, maintenance_session, json_jobs, retailer_confi
     total_jobs = maintenance_session.query(OnlineSyncJob)\
         .filter(OnlineSyncJob.org_code == org_code).order_by(OnlineSyncJob.task_priority).all()
     dags = {}
-    dags = create_retailer_sync_dags(org_code, total_jobs, dags, retailer_config)
+    # dags = create_retailer_sync_dags(org_code, total_jobs, dags, retailer_config)
     dags = create_plan_sync_dags(org_code, dags, maintenance_session)
     return dags
 

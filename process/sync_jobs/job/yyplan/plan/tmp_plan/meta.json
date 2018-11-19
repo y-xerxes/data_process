@@ -1,0 +1,27 @@
+{
+    "fetch_size": 1024,
+    "target_columns": [
+     "plan_no",
+     "plan_name",
+     "plan_memo",
+     "plan_item_no",
+     "plan_item_name",
+     "plan_item_desc",
+     "rule_no",
+     "begin_date",
+     "end_date",
+     "plan_status",
+     "item_no",
+     "branch_no",
+     "amt",
+     "ex_amt",
+     "rate",
+     "multiple_flag",
+     "sale_price",
+     "price",
+     "need_combine"
+    ],
+    "target_tables": [
+        "tmp_prt_plan"
+    ]
+}

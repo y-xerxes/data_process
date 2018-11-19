@@ -159,8 +159,8 @@ class SyncOperator(object):
 
 
 
-org_code = 'happyxybb'
-mode = 'ss'
+org_code = 'yyplan'
+mode = 'plan'
 online_path = abspath("./job")
 
 # SyncOperator(online_path, org_code, mode, 'tmp_shop').sync()
@@ -172,4 +172,4 @@ online_path = abspath("./job")
 # SyncOperator(online_path, org_code, mode, 'tmp_guider').sync()
 # SyncOperator(online_path, org_code, mode, 'tmp_payment').sync()
 
-SyncOperator(online_path, org_code, mode, 'prt_sales').sync()
+SyncOperator(online_path, org_code, mode, 'tmp_plan').sync()
