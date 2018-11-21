@@ -45,13 +45,18 @@ class SyncOperator(object):
     def sync(self):
         self._init_config()
         self._init_connection()
+        self._init_retailer_config()
         self.get_database_config()
         self._get_sync_json()
         pass
 
     def _init_config(self):
-        with open(join(self.path, 'config.json'), 'r') as config_content:
+        with open(join(self.path, 'config_localhost.json'), 'r') as config_content:
             self.config = json.load(config_content)
+
+    def _init_retailer_config(self):
+        with open(join(self.path, 'config_3306.json'), 'r') as config_content1:
+            self.retailer_config = json.load(config_content1)
 
     def _init_connection(self):
         self.connection = pymysql.connect(host=self.config['host'], port=self.config['port'],
@@ -63,6 +68,7 @@ class SyncOperator(object):
         sql = "select database_type, database_config from retailer_configs where org_code='" + self.org_code + "'"
         cur.execute(sql)
         database_config = cur.fetchone()
+        # 商户
         self.database_type = database_config[0]
         self.database_config = json.loads(database_config[1])
         cur.close()
@@ -94,7 +100,6 @@ class SyncOperator(object):
         sql_host = self.database_config['host']
         sql_port = self.database_config['port']
         sql_database = self.database_config['database']
-        print(self.database_config)
         if self.database_type == "sql_server":
             name = "sqlserverreader"
             sql_jdbc_url = "jdbc:jtds:sqlserver://{0}:{1};DatabaseName={2}".format(sql_host, sql_port, sql_database)
@@ -102,13 +107,15 @@ class SyncOperator(object):
         if self.database_type == "mysql":
             name = "mysqlreader"
             sql_jdbc_url = "jdbc:mysql://{0}:{1}/{2}".format(sql_host, sql_port, sql_database)
-        jw_user = self.config['username']
-        jw_pass = self.config['password']
-        jw_host = self.config['host']
-        jw_port = self.config['port']
-        online_dw_name = self.org_code + "dw"
+        jw_user = self.retailer_config['username']
+        jw_pass = self.retailer_config['password']
+        jw_host = self.retailer_config['host']
+        jw_port = self.retailer_config['port']
+        online_dw_name = self.org_code + "DW"
         jw_jdbc_url = "jdbc:mysql://{0}:{1}/{2}?useUnicode=true&characterEncoding=utf-8" \
                             .format(jw_host, jw_port, online_dw_name)
+        print(jw_jdbc_url)
+        print(sql_jdbc_url)
         datax_json = {
             "timestamp": int(round(time.time() * 1000)),
             "job": {
@@ -150,6 +157,7 @@ class SyncOperator(object):
                 ]
             }
         }
+        print(datax_json)
         datax_path = os.environ.get("DATAX_HOME")
         temp = tempfile.NamedTemporaryFile(mode="w+")
         temp.write(json.dumps(datax_json, ensure_ascii=False))
@@ -159,7 +167,7 @@ class SyncOperator(object):
 
 
 
-org_code = 'yyplan'
+org_code = 'mmbabyangel'
 mode = 'plan'
 online_path = abspath("./job")
 

@@ -82,27 +82,7 @@ class RetailerMySqlExecutor(JwMysqlExecutor):
         username = full_config['username']
         password = full_config['password']
 
-        from model.retailer_config import RetailerConfig
-        self.database = RetailerConfig.dw_name(self.org_code, self.maintenance_session)
-
-        return MySQLdb.connect(host=host, port=port, user=username, passwd=password, db=self.database, charset="utf8")
-
-
-class RetailerMySqlExecutor(JwMysqlExecutor):
-    def __init__(self, org_code, *args, **kwargs):
-        kwargs['database'] = None
-        kwargs['data_source_name'] = 'retailer'
-        super(RetailerMySqlExecutor, self).__init__(*args, **kwargs)
-        self.prg_code = org_code
-
-    def connection(self):
-        full_config = self.database_config[self.data_source_name]
-        host = full_config['host']
-        port = full_config['port']
-        username = full_config['username']
-        password = full_config['password']
-
-        from model.retailer_config import RetailerConfig
+        from process.model.retailer_config import RetailerConfig
         self.database = RetailerConfig.dw_name(self.org_code, self.maintenance_session)
 
         return MySQLdb.connect(host=host, port=port, user=username, passwd=password, db=self.database, charset="utf8")

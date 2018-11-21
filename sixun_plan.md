@@ -28,7 +28,9 @@ SELECT
      pm.multiple_flag as multiple_flag,
      pf.sale_price as sale_price,
      pf.price as price,
-     case when pf.rule_no='DMI' then '1' else '0' end as need_combine
+     case when pf.rule_no='DMI' then '1' else '0' end as need_combine, 
+     GETDATE() as gmt_create, 
+     GETDATE() as gmt_modified
 FROM
     t_rm_plan_master as pm
 INNER JOIN
@@ -119,6 +121,7 @@ username:root, password:123456, host:192.168.10.50, port:3308
 3. deal_plan_data
 
 
+
 ### 数据同步方案
 1. 在sync_jobs项目下的相应商户目录下创建/plan/tmp_plan，将任务上传到retailer_sync_jobs中。此任务将数据伪实时同步到prt_plan表中，同步语句需要做到增量同步。
 2. (增量同步需要做到取到新开始的促销活动和刚刚结束的促销活动。新开始的促销活动一定有审核时间，可以记录目前dw库中最大审核时间，在商户数据库中取审核时间大于dw库中最大审核时间的促销活动，即新的促销活动。 这样的话，无法获知已经同步的促销活动是否已经结束。因此同步的语句一定要将dw库中正在进行中的促销活动也获取到，然后将这些促销活动的状态与线上做对比，如果已经结束，就将此促销活动在线上也结束。 或者，同步语句只同步正在进行中的促销活动，与线上做对比，如果线上没有，就是新的促销活动；如果线上的促销活动没有同步到，代表此促销活动已经结束。)
@@ -130,3 +133,12 @@ username:root, password:123456, host:192.168.10.50, port:3308
 	2) 同步到tmp_prt_plan后更新促销类型编号
 	3) 与prt_plan中的数据作对比
 	4) 获取新的促销活动以及新结束的促销活动，发给后台
+
+
+### 数据同步任务记录
+1. sync_jobs/job/yyplan/plan	促销活动数据同步sql
+2. config_3306.json	mysql—3306配置
+3. config_3307.json	mysql-3307配置
+4. config_localhost.json	本地数据库的配置(包含database_service_maintenance和dw)
+5. dag_creator.py	添加create_plan_sync_dags方法
+6. retailer_sync_operator	添加PlanDataSyncOperator和PlanSyncJobExecutor

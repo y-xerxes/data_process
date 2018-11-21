@@ -17,7 +17,9 @@ SELECT
      pm.multiple_flag as multiple_flag,
      pf.sale_price as sale_price,
      pf.price as price,
-     case when pf.rule_no='DMI' then '1' else '0' end as need_combine
+     case when pf.rule_no='DMI' then '1' else '0' end as need_combine,
+     GETDATE() as gmt_create,
+     GETDATE() as gmt_modified
 FROM
     t_rm_plan_master as pm
 INNER JOIN

@@ -9,7 +9,7 @@ class DataxServiceHelper(object):
     @staticmethod
     def exec_datax_job(job_config: dict, datax_service_host=None):
         if datax_service_host is None:
-            datax_service_host = "http://datax-service"
+            datax_service_host = "http://127.0.0.1:9999"
 
         logging.info("开始执行DataxJob: {0}".format(job_config))
         r = requests.post(

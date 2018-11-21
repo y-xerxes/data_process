@@ -16,6 +16,7 @@ from process.airflow_task.service.mysql_executor import RetailerMySqlExecutor
 from process.model.retailer_config import DatabaseConfig, RetailerSyncJob, RetailerConfig
 from process.datax_service.datax_service_helper import DataxServiceHelper
 from process.service.base_service import BaseService
+from process.service.joowing_event import JoowingEventSender
 from process.service.kafka_executor import KafkaExecutor
 
 
@@ -197,11 +198,13 @@ class PlanDataSyncOperator(BaseOperator):
         self._maintenance_session = None
         self._database_config = None
         self._retailer_config = None
-        self.plan_sync_jobs = []
+        self.plan_sync_job = None
 
     def execute(self, context):
         self._load_plan_sync_jobs()
         self._execute_job_sync()
+        # self._call_plan_data_deal()
+        # self._notify_change()
 
     @property
     def database_config(self) -> dict:
@@ -223,17 +226,40 @@ class PlanDataSyncOperator(BaseOperator):
             return self._retailer_config
 
     def _load_plan_sync_jobs(self):
-        self.plan_sync_jobs = self.maintenance_session.query(RetailerSyncJob) \
-                        .filter(RetailerSyncJob.org_code == self.org_code).filter(RetailerSyncJob.mode == "plan").all()
+        self.plan_sync_job = self.maintenance_session.query(RetailerSyncJob) \
+                        .filter(RetailerSyncJob.org_code == self.org_code).filter(RetailerSyncJob.mode == "plan").first()
 
     def _execute_job_sync(self):
-        for plan_sync_job in self.plan_sync_jobs:
-            PlanSyncJobExecutor(
-                maintenance_session=self.maintenance_session,
-                database_config=self.database_config,
-                retailer_config=self.retailer_config,
-                plan_sync_job=plan_sync_job
-            ).exec_job()
+        PlanSyncJobExecutor(
+            maintenance_session=self.maintenance_session,
+            database_config=self.database_config,
+            retailer_config=self.retailer_config,
+            plan_sync_job=self.plan_sync_job
+        ).exec_job()
+
+    def _call_plan_data_deal(self):
+        sql = "call deal_plan_data()"
+        logging.info('Executing: ' + str(sql))
+        RetailerMySqlExecutor(maintenance_session=self.maintenance_session,
+                              database_config=DatabaseConfig.current_config(self.maintenance_session),
+                              sql=sql, data_source_name="retailer", parameters=None,
+                              org_code=self.org_code).execute()
+
+    def _notify_change(self, max_value: str):
+        changed_data_load_sql = "select * from changed_plan"
+        changed_data = list(RetailerMySqlExecutor(
+            maintenance_session=self.maintenance_session,
+            database_config=self.database_config,
+            org_code=self.plan_sync_job.org_code,
+            sql=changed_data_load_sql
+        ).read())[0]
+
+        JoowingEventSender(config=self.database_config).send_event(
+            event_name="data_service.delta.prt_plan",
+            event_memo={"org_code": self.retailer_config.org_code, "data": changed_data}
+        )
+
+        logging.info("notify change end")
 
 
 class PlanSyncJobExecutor(object):
@@ -250,7 +276,8 @@ class PlanSyncJobExecutor(object):
         self.remote_field = None
         self.local_field = None
         self.notify_change = False
-        self.datax_service_host = self.database_config.get("datax_service_host", None)
+        # self.datax_service_host = self.database_config.get("datax_service_host", None)
+        self.datax_service_host = "http://127.0.0.1:9999"
 
     def exec_job(self):
         self.read_config()
@@ -277,6 +304,7 @@ class PlanSyncJobExecutor(object):
         return self.remote_field is not None and self.local_field is not None
 
     def _increment_sync(self):
+        #
         pass
 
     def _direct_sync(self, query_sql: List[str]):
@@ -285,5 +313,4 @@ class PlanSyncJobExecutor(object):
             config=self.database_config,
             query_sql=query_sql
         )
-        print(datax_job)
-        # DataxServiceHelper.exec_datax_job(job_config=datax_job, datax_service_host=self.datax_service_host)
+        DataxServiceHelper.exec_datax_job(job_config=datax_job, datax_service_host=self.datax_service_host)
