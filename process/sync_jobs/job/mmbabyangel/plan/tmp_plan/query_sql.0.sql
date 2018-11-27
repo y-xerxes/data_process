@@ -6,9 +6,9 @@ SELECT
      pf.plan_name as plan_item_name,
      pf.plan_desc as plan_item_desc,
      pf.rule_no as rule_no,
-     isnull(isnull(pm.confirm_date,pm.oper_date),pf.begin_date) as begin_date,
-     isnull(pm.stop_date,pf.end_date) as end_date,
-     case when approve_flag=0 then '0' when approve_flag=1 and GETDATE() BETWEEN ISNULL(pm.confirm_date,pm.oper_date) and ISNULL(pm.stop_date,pf.end_date) then '1' when approve_flag=2 or GETDATE()>ISNULL(pm.stop_date,pf.end_date) then '2' end as plan_status,
+     pm.begin_date as begin_date,
+     isnull(pm.stop_date,pm.end_date) as end_date,
+     case when approve_flag=0 then '0' when approve_flag=1 and GETDATE() BETWEEN pm.begin_date and ISNULL(pm.stop_date,pf.end_date) then '1' when approve_flag=2 or GETDATE()>ISNULL(pm.stop_date,pf.end_date) then '2' end as plan_status,
      pf.item_no as item_no,
      pb.branch_no as branch_no,
      isnull(pf.amt, 0) as amt,
@@ -30,5 +30,5 @@ WHERE
     pf.rule_no in ('PSI','PQI','DDI','FRI','DMI','FMI','DQI')
     AND pm.vip_type in ('1','无')
     AND pf.week='1111111'
-    AND pm.approve_flag=1 and GETDATE() BETWEEN ISNULL(pm.confirm_date,pm.oper_date) and ISNULL(pm.stop_date,pf.end_date)
+    AND pm.approve_flag=1 and GETDATE() BETWEEN pm.begin_date and ISNULL(pm.stop_date,pf.end_date)
     AND pf.limit is null

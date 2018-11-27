@@ -10,7 +10,7 @@ import pymysql
 
 def process_dir_name(path):
     # type: (str) -> None
-    if os.path.isfile(join(path, "config_localhost.json")):
+    if os.path.isfile(join(path, "config_dev02_3307.json")):
         EnvSyncDirectory(path).sync()
     else:
         print(u"环境{0}找不到数据的配置文件[config.json]".format(basename(path)))
@@ -32,7 +32,7 @@ class EnvSyncDirectory(object):
         self._scan_orgs()
 
     def _init_config(self):
-        with open(join(self.path, 'config_localhost.json'), 'r', encoding="utf-8") as config_content:
+        with open(join(self.path, 'config_dev02_3307.json'), 'r', encoding="utf-8") as config_content:
             self.config = json.load(config_content)
 
     def _init_connection(self):

@@ -1,0 +1,7 @@
+{
+  "host": "192.168.10.240",
+  "port": 3307,
+  "username": "datadev",
+  "password": "datadev!3307",
+  "database_name": "database_service_maintenance"
+}

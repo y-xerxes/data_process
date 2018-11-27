@@ -1,1 +1,0 @@
-truncate table ss_tmp;

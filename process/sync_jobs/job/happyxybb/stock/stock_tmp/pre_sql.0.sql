@@ -1,1 +1,0 @@
-delete from stock_tmp;

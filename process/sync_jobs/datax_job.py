@@ -158,12 +158,12 @@ class SyncOperator(object):
             }
         }
         print(datax_json)
-        datax_path = os.environ.get("DATAX_HOME")
-        temp = tempfile.NamedTemporaryFile(mode="w+")
-        temp.write(json.dumps(datax_json, ensure_ascii=False))
-        temp.flush()
-        bash_command = "{0}/bin/datax.py {1}".format(datax_path, temp.name)
-        print(os.system(bash_command))
+        # datax_path = os.environ.get("DATAX_HOME")
+        # temp = tempfile.NamedTemporaryFile(mode="w+")
+        # temp.write(json.dumps(datax_json, ensure_ascii=False))
+        # temp.flush()
+        # bash_command = "{0}/bin/datax.py {1}".format(datax_path, temp.name)
+        # print(os.system(bash_command))
 
 
 
