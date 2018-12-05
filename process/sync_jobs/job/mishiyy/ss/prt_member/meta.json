@@ -1,0 +1,16 @@
+{
+    "fetch_size": 1024,
+    "target_columns": [
+        "member_code",
+        "member_no",
+        "member_name",
+        "baby_birthdate",
+        "member_mobile",
+        "rgst_date",
+        "rgst_shop_code"
+    ],
+    "target_tables": [
+        "prt_member"
+    ],
+    "task_priority": 1
+}

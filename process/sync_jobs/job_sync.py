@@ -10,7 +10,7 @@ import pymysql
 
 def process_dir_name(path):
     # type: (str) -> None
-    if os.path.isfile(join(path, "config_dev02_3307.json")):
+    if os.path.isfile(join(path, "config_localhost.json")):
         EnvSyncDirectory(path).sync()
     else:
         print(u"环境{0}找不到数据的配置文件[config.json]".format(basename(path)))
@@ -32,7 +32,7 @@ class EnvSyncDirectory(object):
         self._scan_orgs()
 
     def _init_config(self):
-        with open(join(self.path, 'config_dev02_3307.json'), 'r', encoding="utf-8") as config_content:
+        with open(join(self.path, 'config_localhost.json'), 'r', encoding="utf-8") as config_content:
             self.config = json.load(config_content)
 
     def _init_connection(self):
@@ -46,22 +46,19 @@ class EnvSyncDirectory(object):
             dir_start_with_dot = entry.name.startswith(".")
             if all([org_dir.is_dir(), not dir_start_with_dot]):
                 org_code = basename(org_dir.name)
-                # if os.path.isdir(join(self.path, org_dir.name, "dr")):
-                #     dr_tasks = TaskScanner(org_code=org_code, mode="dr",
-                #                            path=join(self.path, org_dir.name, "dr")).scan_tasks(self.connection)
-                #     self.tasks.extend(dr_tasks)
-                # if os.path.isdir(join(self.path, org_dir.name, "stock")):
-                #     ss_tasks = TaskScanner(org_code=org_code, mode="stock",
-                #                            path=join(self.path, org_dir.name, "stock")).scan_tasks(self.connection)
-                #     self.tasks.extend(ss_tasks)
-                #
-                # if os.path.isdir(join(self.path, org_dir.name, "sqls")):
-                #     sql_scanner = SQLScanner(org_code=org_code, path=join(self.path, org_dir.name, "sqls"))
-                #     sql_scanner.scan_sqls(self.connection)
-                # if os.path.isdir(join(self.path, org_dir.name, "ss")):
-                #     ss_tasks = TaskScanner(org_code=org_code, mode="ss",
-                #                            path=join(self.path, org_dir.name, "ss")).scan_tasks(self.connection)
-                #     self.tasks.extend(ss_tasks)
+                if os.path.isdir(join(self.path, org_dir.name, "dr")):
+                    dr_tasks = TaskScanner(org_code=org_code, mode="dr",
+                                           path=join(self.path, org_dir.name, "dr")).scan_tasks(self.connection)
+                    self.tasks.extend(dr_tasks)
+                if os.path.isdir(join(self.path, org_dir.name, "stock")):
+                    ss_tasks = TaskScanner(org_code=org_code, mode="stock",
+                                           path=join(self.path, org_dir.name, "stock")).scan_tasks(self.connection)
+                    self.tasks.extend(ss_tasks)
+
+                if os.path.isdir(join(self.path, org_dir.name, "ss")):
+                    ss_tasks = TaskScanner(org_code=org_code, mode="ss",
+                                           path=join(self.path, org_dir.name, "ss")).scan_tasks(self.connection)
+                    self.tasks.extend(ss_tasks)
                 if os.path.isdir(join(self.path, org_dir.name, "plan")):
                     ss_tasks = TaskScanner(org_code=org_code, mode="plan",
                                            path=join(self.path, org_dir.name, "plan")).scan_tasks(self.connection)
@@ -146,7 +143,8 @@ UPDATE retailer_sync_jobs SET
   retailer_sync_jobs.fetch_size = %s,
   retailer_sync_jobs.session_sqls = %s,
   retailer_sync_jobs.task_priority = %s,
-  retailer_sync_jobs.increment_config = %s
+  retailer_sync_jobs.increment_config = %s,
+  retailer_sync_jobs.matching_db_config = %s
 WHERE retailer_sync_jobs.id = %s
         """
         cursor.execute(query_existed_sql, query_args)
@@ -171,6 +169,7 @@ WHERE retailer_sync_jobs.id = %s
                 json.dumps(task.session_sqls, indent=4),
                 json.dumps(task.task_priority, indent=4),
                 json.dumps(task.increment_config, indent=4),
+                task.matching_db_config,
                 task_id
             ]
             cursor.execute(update_sql, update_args)
@@ -180,8 +179,8 @@ WHERE retailer_sync_jobs.id = %s
 INSERT INTO `retailer_sync_jobs` (
   `org_code`, `created_at`, `updated_at`, `name`, 
   `query_sql`, `pre_sql`, `target_tables`, `target_columns`, 
-  `manual_create_json`, `fetch_size`, `session_sqls`, `mode`, `task_priority`, `increment_config`)
-VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
+  `manual_create_json`, `fetch_size`, `session_sqls`, `mode`, `task_priority`, `increment_config`, `matching_db_config`)
+VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
         """
 
         for task_name in grouped_tasks.keys():
@@ -201,7 +200,8 @@ VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
                 json.dumps(task.session_sqls, indent=4),
                 task.mode,
                 json.dumps(task.task_priority, indent=4),
-                json.dumps(task.increment_config, indent=4)
+                json.dumps(task.increment_config, indent=4),
+                task.matching_db_config
             ]
             cursor.execute(insert_sql, insert_args)
 
@@ -223,6 +223,7 @@ class Task(object):
         self.session_sqls = []
         self.query_sqls = []
         self.increment_config = []
+        self.matching_db_config = None
 
         self._load_meta()
         self._load_pre_sqls()
@@ -237,6 +238,7 @@ class Task(object):
             self.fetch_size = meta_config.get("fetch_size", 1024)
             self.task_priority = meta_config.get("task_priority", 0)
             self.increment_config = meta_config.get("increment_config", {})
+            self.matching_db_config = meta_config.get("matching_db_config", "default")
 
     def _load_pre_sqls(self):
         self.pre_sqls.extend(self._load_sqls("pre_sql"))

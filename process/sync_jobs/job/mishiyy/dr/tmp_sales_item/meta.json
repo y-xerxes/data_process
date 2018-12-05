@@ -1,0 +1,21 @@
+{
+    "fetch_size": 1024,
+    "target_columns": [
+        "order_no",
+        "item_seq",
+        "sales_time",
+        "shop_code",
+        "member_code",
+        "product_code",
+        "sales_price",
+        "fact_price",
+        "amount",
+        "quantity",
+        "profit",
+        "guider_code"
+    ],
+    "target_tables": [
+        "tmp_sales_item"
+    ],
+    "matching_db_config": "order"
+}

@@ -1,0 +1,20 @@
+{
+    "fetch_size": 1024,
+    "target_columns": [
+        "order_no",
+        "date_id",
+        "sales_time",
+        "shop_code",
+        "member_code",
+        "member_no",
+        "real_amount",
+        "due_amount",
+        "discount_amount",
+        "guider_code"
+    ],
+    "target_tables": [
+        "tmp_prt_sales"
+    ],
+    "task_priority": 3,
+    "matching_db_config": "order"
+}

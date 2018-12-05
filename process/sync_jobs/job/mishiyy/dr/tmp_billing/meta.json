@@ -1,0 +1,11 @@
+{
+    "fetch_size": 1024,
+    "target_columns": [
+        "order_no",
+        "real_amount"
+    ],
+    "target_tables": [
+        "tmp_billing"
+    ],
+    "matching_db_config": "order"
+}

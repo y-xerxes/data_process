@@ -1,0 +1,1 @@
+truncate table tmp_prt_sales;

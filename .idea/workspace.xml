@@ -1,227 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/../../project/sixun_plan.md" line="0" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="1382de2e-79fc-4007-8803-eb62d595da37" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/data_process.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/data_process.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/non_real_time_dag.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/airflow_task/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/airflow_task/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/airflow_task/dag_creator.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/airflow_task/dag_creator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/airflow_task/retailer_sync_operator.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/airflow_task/retailer_sync_operator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/airflow_task/service/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/airflow_task/service/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/airflow_task/service/mysql_executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/airflow_task/service/mysql_executor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/app/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/app/application.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/app/stream_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/app/stream_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/buz/retailer_statistics/calculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/buz/retailer_statistics/calculator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/buz/retailer_statistics/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/buz/retailer_statistics/helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/buz/retailer_statistics/loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/buz/retailer_statistics/loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/buz/retailer_statistics/stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/buz/retailer_statistics/stage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/datax_service/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/datax_service/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/datax_service/datax_service_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/datax_service/datax_service_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/process/derby.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/livy_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/livy_runner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/README_DO_NOT_TOUCH_FILES.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/db.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/dbex.lck" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/dbex.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/log/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/log/README_DO_NOT_TOUCH_FILES.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/log/log.ctrl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/log/log1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/log/logmirror.ctrl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/README_DO_NOT_TOUCH_FILES.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c10.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c10.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c101.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c101.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c111.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c111.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c121.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c121.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c130.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c130.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c141.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c141.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c150.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c150.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c161.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c161.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c171.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c171.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c180.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c180.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c191.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c191.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c1a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c1a1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c1b1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c1b1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c1c0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c1c0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c1d1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c1d1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c1e0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c1e0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c1f1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c1f1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c20.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c20.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c200.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c200.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c211.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c211.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c221.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c221.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c230.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c230.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c241.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c241.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c251.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c251.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c260.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c260.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c271.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c271.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c281.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c281.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c290.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c290.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c2a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c2a1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c2b1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c2b1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c2c1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c2c1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c2d0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c2d0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c2e1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c2e1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c2f0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c2f0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c300.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c300.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c31.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c31.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c311.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c311.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c321.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c321.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c331.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c331.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c340.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c340.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c351.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c351.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c361.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c361.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c371.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c371.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c380.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c380.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c391.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c391.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c3a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c3a1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c3b1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c3b1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c3c0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c3c0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c3d1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c3d1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c3e1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c3e1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c3f1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c3f1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c400.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c400.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c41.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c41.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c411.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c411.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c421.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c421.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c430.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c430.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c441.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c441.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c451.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c451.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c461.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c461.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c470.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c470.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c481.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c481.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c490.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c490.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c4a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c4a1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c4b0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c4b0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c4c1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c4c1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c4d1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c4d1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c4e1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c4e1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c4f0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c4f0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c501.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c501.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c51.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c51.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c510.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c510.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c521.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c521.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c530.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c530.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c541.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c541.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c550.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c550.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c561.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c561.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c570.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c570.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c581.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c581.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c590.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c590.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c5a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c5a1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c5b0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c5b0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c5c1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c5c1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c5d0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c5d0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c5e1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c5e1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c5f0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c5f0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c60.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c60.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c601.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c601.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c610.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c610.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c621.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c621.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c630.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c630.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c641.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c641.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c650.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c650.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c661.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c661.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c670.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c670.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c681.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c681.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c690.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c690.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c6a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c6a1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c6b0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c6b0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c6c1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c6c1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c6d0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c6d0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c6e1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c6e1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c6f0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c6f0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c701.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c701.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c71.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c71.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c711.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c711.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c721.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c721.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c731.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c731.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c741.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c741.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c751.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c751.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c761.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c761.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c771.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c771.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c781.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c781.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c791.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c791.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c7a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c7a1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c7b1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c7b1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c7c1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c7c1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c7d1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c7d1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c7e1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c7e1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c7f1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c7f1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c801.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c801.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c81.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c81.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c811.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c811.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c821.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c821.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c831.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c831.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c840.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c840.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c851.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c851.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c860.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c860.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c871.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c871.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c880.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c880.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c891.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c891.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c8a0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c8a0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c8b1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c8b1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c8c1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c8c1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c8d1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c8d1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c8e1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c8e1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c8f1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c8f1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c90.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c90.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c901.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c901.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c911.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c911.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c920.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c920.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c931.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c931.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c940.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c940.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c951.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c951.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c960.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c960.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c971.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c971.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c981.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c981.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c990.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c990.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c9a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c9a1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c9b1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c9b1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c9c0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c9c0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c9d1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c9d1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c9e0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c9e0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/c9f1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/c9f1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/ca01.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/ca01.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/ca1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/ca1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/ca11.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/ca11.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/ca21.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/ca21.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/cb1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/cb1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/cc0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/cc0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/cd1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/cd1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/ce1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/ce1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/seg0/cf0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/seg0/cf0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/metastore_db/service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/process/metastore_db/service.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/model/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/model/retailer_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/model/retailer_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/run_streaming.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/run_streaming.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/service/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/service/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/service/base_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/service/base_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/service/kafka_executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/service/kafka_executor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/streaming_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/streaming_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/sync_jobs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/sync_jobs/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/sync_jobs/datax_job.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/sync_jobs/datax_job.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/sync_jobs/job/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/sync_jobs/job/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/sync_jobs/job/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/process/sync_jobs/job/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/sync_jobs/job/yyplan/plan/tmp_plan/meta.json" beforeDir="false" afterPath="$PROJECT_DIR$/process/sync_jobs/job/yyplan/plan/tmp_plan/meta.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/sync_jobs/job/yyplan/plan/tmp_plan/query_sql.0.sql" beforeDir="false" afterPath="$PROJECT_DIR$/process/sync_jobs/job/yyplan/plan/tmp_plan/query_sql.0.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/process/sync_jobs/job/config_3307.json" beforeDir="false" afterPath="$PROJECT_DIR$/process/sync_jobs/job/config_3307.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/process/sync_jobs/job_sync.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/sync_jobs/job_sync.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/util/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/util/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/util/cache_support.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/util/cache_support.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/util/data_context.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/util/data_context.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/util/data_transfer.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/util/data_transfer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/util/database_rdd_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/util/database_rdd_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/util/hdfs_script_uploader.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/util/hdfs_script_uploader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/util/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/util/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/retailer_dag.py" beforeDir="false" afterPath="$PROJECT_DIR$/retailer_dag.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sixun_plan.md" beforeDir="false" afterPath="$PROJECT_DIR$/sixun_plan.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_livy.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_livy.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -297,40 +84,46 @@
     <session id="-1398870857">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.19" value="2" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="json" value="34" />
-          <entry key="md" value="2" />
-          <entry key="py" value="648" />
-          <entry key="sql" value="12" />
+          <entry key="dummy" value="1" />
+          <entry key="json" value="58" />
+          <entry key="md" value="22" />
+          <entry key="py" value="1469" />
+          <entry key="sql" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="DBN-SQL" value="12" />
-          <entry key="JSON" value="34" />
-          <entry key="Markdown" value="2" />
-          <entry key="Python" value="648" />
+          <entry key="DBN-SQL" value="20" />
+          <entry key="JSON" value="58" />
+          <entry key="Markdown" value="22" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="1469" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="json" value="14" />
-          <entry key="md" value="2" />
-          <entry key="py" value="37" />
-          <entry key="sql" value="7" />
+          <entry key="json" value="23" />
+          <entry key="md" value="10" />
+          <entry key="py" value="54" />
+          <entry key="sql" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="DBN-SQL" value="7" />
-          <entry key="JSON" value="14" />
-          <entry key="Markdown" value="2" />
-          <entry key="Python" value="37" />
+          <entry key="DBN-SQL" value="17" />
+          <entry key="JSON" value="23" />
+          <entry key="Markdown" value="10" />
+          <entry key="Python" value="54" />
         </counts>
       </usages-collector>
     </session>
@@ -338,40 +131,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/process/sync_jobs/datax_job.py">
+        <entry file="file://$PROJECT_DIR$/process/sync_jobs/job_sync_v2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="152" column="33" selection-start-line="152" selection-start-column="33" selection-end-line="152" selection-end-column="33" />
+            <state relative-caret-position="3480">
+              <caret line="240" selection-start-line="240" selection-end-line="240" />
               <folding>
-                <element signature="e#39#53#0" expanded="true" />
+                <element signature="e#0#14#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/process/airflow_task/dag_creator.py">
+        <entry file="file://$PROJECT_DIR$/process/sync_jobs/job_sync.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/process/airflow_task/retailer_sync_operator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="313" column="31" selection-start-line="313" selection-start-column="31" selection-end-line="313" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/process/datax_service/datax_service_helper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+            <state relative-caret-position="443">
+              <caret line="226" lean-forward="true" selection-start-line="226" selection-end-line="226" />
             </state>
           </provider>
         </entry>
@@ -396,6 +171,8 @@
       <find>addition</find>
       <find>NotImplementedError</find>
       <find>.filter</find>
+      <find>connection</find>
+      <find>的数据库配置未更新</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/airflow_task</dir>
@@ -407,17 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sync_jobs/__init__.py" />
-        <option value="$PROJECT_DIR$/sync_jobs/job/__init__.py" />
-        <option value="$PROJECT_DIR$/util/__init__.py" />
-        <option value="$PROJECT_DIR$/__init__.py" />
-        <option value="$PROJECT_DIR$/airflow_task/dag_creator.py" />
-        <option value="$PROJECT_DIR$/airflow_task/retailer_sync_operator.py" />
-        <option value="$PROJECT_DIR$/model/retailer_config.py" />
-        <option value="$PROJECT_DIR$/process/__init__.py" />
-        <option value="$PROJECT_DIR$/process/retailer_dag.py" />
-        <option value="$PROJECT_DIR$/process/run_streaming.py" />
-        <option value="$PROJECT_DIR$/test/test_livy.py" />
         <option value="$PROJECT_DIR$/process/util/hdfs_script_uploader.py" />
         <option value="$PROJECT_DIR$/process/livy_runner.py" />
         <option value="$PROJECT_DIR$/process/service/kafka_executor.py" />
@@ -440,24 +206,35 @@
         <option value="$PROJECT_DIR$/process/sync_jobs/job/yyplan_test/plan/tmp_plan/query_sql.0.sql" />
         <option value="$PROJECT_DIR$/process/sync_jobs/job/yyplan_test/plan/tmp_plan/meta.json" />
         <option value="$PROJECT_DIR$/process/sync_jobs/job/yyplan/plan/tmp_plan/pre_sql.0.sql" />
-        <option value="$PROJECT_DIR$/process/airflow_task/dag_creator.py" />
         <option value="$PROJECT_DIR$/process/sync_jobs/job/config.json" />
         <option value="$PROJECT_DIR$/process/sync_jobs/job/test_config.json" />
         <option value="$PROJECT_DIR$/process/sync_jobs/job/yyplan/plan/tmp_plan/meta.json" />
         <option value="$PROJECT_DIR$/sixun_plan.md" />
         <option value="$PROJECT_DIR$/process/sync_jobs/job/yyplan/plan/tmp_plan/query_sql.0.sql" />
         <option value="$PROJECT_DIR$/process/airflow_task/service/mysql_executor.py" />
-        <option value="$PROJECT_DIR$/process/sync_jobs/job_sync.py" />
         <option value="$PROJECT_DIR$/process/service/joowing_event.py" />
         <option value="$PROJECT_DIR$/process/sync_jobs/job/sixun_test/plan/tmp_plan/query_sql.0.sql" />
-        <option value="$PROJECT_DIR$/retailer_dag.py" />
         <option value="$PROJECT_DIR$/process/sync_jobs/job/config_3306.json" />
         <option value="$PROJECT_DIR$/process/datax_service/datax_service_helper.py" />
         <option value="$PROJECT_DIR$/process/airflow_task/retailer_sync_operator.py" />
-        <option value="$PROJECT_DIR$/process/service/base_service.py" />
-        <option value="$PROJECT_DIR$/process/model/retailer_config.py" />
+        <option value="$PROJECT_DIR$/process/sync_jobs/job/config_dev02_3307.json" />
+        <option value="$PROJECT_DIR$/../../script/data_sync.py" />
+        <option value="$PROJECT_DIR$/../../script/data_sync_step1.py" />
         <option value="$PROJECT_DIR$/process/sync_jobs/datax_job.py" />
         <option value="$PROJECT_DIR$/process/sync_jobs/job/mmbabyangel/plan/tmp_plan/query_sql.0.sql" />
+        <option value="$PROJECT_DIR$/../../project/sixun_plan.md" />
+        <option value="$PROJECT_DIR$/process/sync_jobs/job/mmbabyangel/plan/tmp_plan/pre_sql.0.sql" />
+        <option value="$PROJECT_DIR$/../../project/会员升级方案.md" />
+        <option value="$PROJECT_DIR$/retailer_dag.py" />
+        <option value="$PROJECT_DIR$/process/service/sync_retailer_config_job.py" />
+        <option value="$PROJECT_DIR$/process/airflow_task/dag_creator.py" />
+        <option value="$PROJECT_DIR$/process/model/retailer_config.py" />
+        <option value="$PROJECT_DIR$/process/service/base_service.py" />
+        <option value="$PROJECT_DIR$/../../project/query_shop_referee.md" />
+        <option value="$PROJECT_DIR$/nor_real_time_dag.py" />
+        <option value="$PROJECT_DIR$/non_real_time_dag.py" />
+        <option value="$PROJECT_DIR$/process/sync_jobs/job/config_3307.json" />
+        <option value="$PROJECT_DIR$/process/sync_jobs/job_sync.py" />
       </list>
     </option>
   </component>
@@ -507,14 +284,6 @@
               <item name="sync_jobs" type="462c0819:PsiDirectoryNode" />
               <item name="job" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="exercise" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exercise" type="462c0819:PsiDirectoryNode" />
-              <item name="process" type="462c0819:PsiDirectoryNode" />
-              <item name="sync_jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="job" type="462c0819:PsiDirectoryNode" />
-              <item name="mmbabyangel" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -524,24 +293,25 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sync_jobs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/process/sync_jobs/job" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/process/sync_jobs/job" />
-      <recent name="$PROJECT_DIR$/process/service" />
-      <recent name="$PROJECT_DIR$/process/sync_jobs/job/yyplan_test/plan" />
-      <recent name="$PROJECT_DIR$/process/sync_jobs/job/yyplan_test" />
-      <recent name="$PROJECT_DIR$/sync_jobs/job" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/process/sync_jobs/" />
+      <recent name="$PROJECT_DIR$/process/sync_jobs/job" />
       <recent name="$PROJECT_DIR$/" />
       <recent name="$PROJECT_DIR$/sync_jobs/job" />
       <recent name="$PROJECT_DIR$/sync_jobs" />
-      <recent name="$PROJECT_DIR$/util" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/process/service" />
+      <recent name="$PROJECT_DIR$/process/sync_jobs/job" />
+      <recent name="$PROJECT_DIR$/process/sync_jobs/job/yyplan_test/plan" />
+      <recent name="$PROJECT_DIR$/process/sync_jobs/job/yyplan_test" />
+      <recent name="$PROJECT_DIR$/sync_jobs/job" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -556,8 +326,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.datax_job">
-    <configuration name="base_service" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.job_sync">
+    <configuration name="data_sync" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="data_process" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -565,11 +335,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/process/service" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../script" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/process/service/base_service.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../script/data_sync.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -578,7 +348,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="dag_creator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="data_sync_step1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="data_process" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -586,11 +356,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/process/airflow_task" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../script" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/process/airflow_task/dag_creator.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../script/data_sync_step1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -666,18 +436,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.datax_job" />
-      <item itemvalue="Python.base_service" />
       <item itemvalue="Python.job_sync" />
-      <item itemvalue="Python.dag_creator" />
+      <item itemvalue="Python.data_sync" />
+      <item itemvalue="Python.data_sync_step1" />
       <item itemvalue="Python.retailer_dag" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.datax_job" />
         <item itemvalue="Python.job_sync" />
-        <item itemvalue="Python.base_service" />
         <item itemvalue="Python.retailer_dag" />
-        <item itemvalue="Python.dag_creator" />
+        <item itemvalue="Python.datax_job" />
+        <item itemvalue="Python.data_sync_step1" />
+        <item itemvalue="Python.data_sync" />
       </list>
     </recent_temporary>
   </component>
@@ -727,7 +497,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32698768" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49930555" visible="true" weight="0.38521835" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39976415" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39865622" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32922733" />
@@ -767,57 +537,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/anaconda/lib/python3.6/site-packages/py4j/java_gateway.py" />
-    <entry file="file://$USER_HOME$/anaconda/lib/python3.6/site-packages/py4j/protocol.py" />
-    <entry file="file://$USER_HOME$/anaconda/lib/python3.6/site-packages/pyspark/sql/utils.py" />
-    <entry file="file://$PROJECT_DIR$/process/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/util/spark_util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda/lib/python3.6/site-packages/pyspark/streaming/kafka.py" />
-    <entry file="file://$PROJECT_DIR$/process/util/database_rdd_generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/streaming_helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/happyxybb/ss/prt_member/meta.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/happyxybb/ss/prt_sales_item/meta.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/happyxybb/ss/prt_sales/meta.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/util/cache_support.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/util/data_context.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/process/metastore_db/README_DO_NOT_TOUCH_FILES.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -897,19 +616,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/yyplan_test/plan/meta.json" />
-    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/yyplan/plan/tmp_plan/session_sql.0.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/happyxybb/dr/tmp_member/query_sql.0.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/yyplan/plan/tmp_plan/pre_sql.0.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/yyplan/plan/tmp_plan/session_sql.0.sql" />
+    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/happyxybb/dr/tmp_member/query_sql.0.sql" />
+    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/yyplan/plan/tmp_plan/pre_sql.0.sql" />
     <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -917,62 +626,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/config_localhost.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/yyplan/plan/tmp_plan/meta.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="15" lean-forward="true" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/yyplan/plan/tmp_plan/query_sql.0.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/yyplan/plan/tmp_plan/meta.json" />
+    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/yyplan/plan/tmp_plan/query_sql.0.sql" />
     <entry file="file://$PROJECT_DIR$/process/airflow_task/service/mysql_executor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/sixun_test/plan/tmp_plan/query_sql.0.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/sixun_test/plan/tmp_plan/query_sql.0.sql" />
     <entry file="file://$PROJECT_DIR$/process/service/joowing_event.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/sixun_test/plan/tmp_plan/meta.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/mmbabyangel/plan/tmp_plan/meta.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/sixun_test/plan/tmp_plan/meta.json" />
     <entry file="file://$PROJECT_DIR$/sixun_plan.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SECOND">
@@ -983,58 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/config_3307.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="15" lean-forward="true" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/config_3306.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job_sync.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/mmbabyangel/plan/tmp_plan/query_sql.0.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="22" column="4" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/service/base_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-          <folding>
-            <element signature="e#24#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/retailer_dag.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/model/retailer_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="282" column="61" selection-start-line="282" selection-start-column="52" selection-end-line="282" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/process/datax_service/datax_service_helper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1042,27 +661,159 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/process/airflow_task/retailer_sync_operator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="287" selection-start-line="287" selection-end-line="287" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/config_dev02_3307.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../script/data_sync_step1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../script/data_sync.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="50" column="54" selection-start-line="50" selection-start-column="54" selection-end-line="50" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/process/sync_jobs/datax_job.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="152" column="33" selection-start-line="152" selection-start-column="33" selection-end-line="152" selection-end-column="33" />
+        <state relative-caret-position="371">
+          <caret line="157" column="13" lean-forward="true" selection-start-line="157" selection-start-column="13" selection-end-line="157" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/config_3306.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/mmbabyangel/plan/tmp_plan/session_sql.0.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="27" lean-forward="true" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/mmbabyangel/plan/tmp_plan/meta.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/mmbabyangel/plan/tmp_plan/query_sql.0.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="28" selection-end-line="33" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/mmbabyangel/plan/tmp_plan/pre_sql.0.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../project/sixun_plan.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="732">
+            <caret line="151" lean-forward="true" selection-start-line="151" selection-end-line="151" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process/service/sync_retailer_config_job.py" />
+    <entry file="file://$PROJECT_DIR$/process/airflow_task/dag_creator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="746">
+          <caret line="75" column="15" lean-forward="true" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/retailer_dag.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process/model/retailer_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="79" column="48" lean-forward="true" selection-start-line="79" selection-start-column="48" selection-end-line="79" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process/service/base_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../project/会员升级方案.md" />
+    <entry file="file://$PROJECT_DIR$/../../project/query_shop_referee.md" />
+    <entry file="file://$PROJECT_DIR$/test/test_livy.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/non_real_time_dag.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../project/member_referee_plan.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/config_localhost.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job/config_3307.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job_sync_v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3480">
+          <caret line="240" selection-start-line="240" selection-end-line="240" />
           <folding>
-            <element signature="e#39#53#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process/airflow_task/retailer_sync_operator.py">
+    <entry file="file://$PROJECT_DIR$/process/sync_jobs/job_sync.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="313" column="31" selection-start-line="313" selection-start-column="31" selection-end-line="313" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/airflow_task/dag_creator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="443">
+          <caret line="226" lean-forward="true" selection-start-line="226" selection-end-line="226" />
         </state>
       </provider>
     </entry>
