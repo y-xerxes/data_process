@@ -4,7 +4,7 @@ SELECT
 FROM
 	order_history_logs
 WHERE
-    org_code='mishiyy'
+    org_code='msyy'
     and trade_date > DATE_SUB(CURDATE(), INTERVAL 7 DAY)
 	AND trade_date < CURDATE()
 GROUP BY

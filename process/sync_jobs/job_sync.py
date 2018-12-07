@@ -144,7 +144,7 @@ UPDATE retailer_sync_jobs SET
   retailer_sync_jobs.session_sqls = %s,
   retailer_sync_jobs.task_priority = %s,
   retailer_sync_jobs.increment_config = %s,
-  retailer_sync_jobs.matching_db_config = %s
+  retailer_sync_jobs.preferred_db_config_name = %s
 WHERE retailer_sync_jobs.id = %s
         """
         cursor.execute(query_existed_sql, query_args)
@@ -169,7 +169,7 @@ WHERE retailer_sync_jobs.id = %s
                 json.dumps(task.session_sqls, indent=4),
                 json.dumps(task.task_priority, indent=4),
                 json.dumps(task.increment_config, indent=4),
-                task.matching_db_config,
+                task.preferred_db_config_name,
                 task_id
             ]
             cursor.execute(update_sql, update_args)
@@ -179,7 +179,7 @@ WHERE retailer_sync_jobs.id = %s
 INSERT INTO `retailer_sync_jobs` (
   `org_code`, `created_at`, `updated_at`, `name`, 
   `query_sql`, `pre_sql`, `target_tables`, `target_columns`, 
-  `manual_create_json`, `fetch_size`, `session_sqls`, `mode`, `task_priority`, `increment_config`, `matching_db_config`)
+  `manual_create_json`, `fetch_size`, `session_sqls`, `mode`, `task_priority`, `increment_config`, `preferred_db_config_name`)
 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
         """
 
@@ -201,7 +201,7 @@ VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
                 task.mode,
                 json.dumps(task.task_priority, indent=4),
                 json.dumps(task.increment_config, indent=4),
-                task.matching_db_config
+                task.preferred_db_config_name
             ]
             cursor.execute(insert_sql, insert_args)
 
@@ -223,7 +223,7 @@ class Task(object):
         self.session_sqls = []
         self.query_sqls = []
         self.increment_config = []
-        self.matching_db_config = None
+        self.preferred_db_config_name = None
 
         self._load_meta()
         self._load_pre_sqls()
@@ -238,7 +238,7 @@ class Task(object):
             self.fetch_size = meta_config.get("fetch_size", 1024)
             self.task_priority = meta_config.get("task_priority", 0)
             self.increment_config = meta_config.get("increment_config", {})
-            self.matching_db_config = meta_config.get("matching_db_config", "default")
+            self.preferred_db_config_name = meta_config.get("preferred_db_config_name", "default")
 
     def _load_pre_sqls(self):
         self.pre_sqls.extend(self._load_sqls("pre_sql"))

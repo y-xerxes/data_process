@@ -10,6 +10,6 @@ sum(pay_total) due_amount,
 0 discount_amount,
 guide guider_code
 from order_history_logs  a
-where org_code='mishiyy'
+where org_code='msyy'
 and trade_date = CURDATE()
 group by order_no ,shop_code ,member_no ,guide

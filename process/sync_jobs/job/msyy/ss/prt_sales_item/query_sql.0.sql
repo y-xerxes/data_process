@@ -15,5 +15,5 @@ select
 from order_order_item_logs ooil
 inner join order_history_logs as ohl
 on ooil.history_log_id=ohl.id
-where ohl.org_code='mishiyy'
+where ohl.org_code='msyy'
 	AND ohl.trade_date = CURDATE()

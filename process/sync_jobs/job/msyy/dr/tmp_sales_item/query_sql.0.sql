@@ -14,6 +14,6 @@ select
 from order_order_item_logs ooil
 inner join order_history_logs as ohl
 on ooil.history_log_id=ohl.id
-where ohl.org_code='lebaby'
+where ohl.org_code='msyy'
 	AND ohl.trade_date > DATE_SUB(CURDATE(), INTERVAL 7 DAY)
 	AND ohl.trade_date < CURDATE()

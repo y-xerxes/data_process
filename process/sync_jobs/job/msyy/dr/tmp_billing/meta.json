@@ -7,5 +7,5 @@
     "target_tables": [
         "tmp_billing"
     ],
-    "matching_db_config": "order"
+    "preferred_db_config_name": "order"
 }

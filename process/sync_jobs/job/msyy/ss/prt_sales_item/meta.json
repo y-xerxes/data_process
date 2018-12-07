@@ -19,5 +19,5 @@
         "prt_sales_item"
     ],
     "task_priority": 2,
-    "matching_db_config": "order"
+    "preferred_db_config_name": "order"
 }
