@@ -1,0 +1,22 @@
+{
+    "fetch_size": 1024,
+    "target_columns": [
+        "product_code",
+        "barcode",
+        "product_name",
+        "categoryiii_code",
+        "categoryiii_name",
+        "categoryii_code",
+        "categoryii_name",
+        "categoryi_code",
+        "categoryi_name",
+        "sales_price",
+        "member_price",
+        "product_state",
+        "pos_created_at"
+    ],
+    "target_tables": [
+        "tmp_product"
+    ],
+    "preferred_db_config_name": "product"
+}
