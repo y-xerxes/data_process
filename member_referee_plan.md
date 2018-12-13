@@ -1,4 +1,4 @@
-# 会员升级统计/新会员升级统计 整合工作
+# 会员升级统计/新会员升级统计 准备工作
 
 ### 计划
 1. 了解业务背景：1人/天
@@ -20,9 +20,6 @@
 	1) 没有发展门店数据的会员不会有首登券，代开卡会员不会有首登券，完成完整注册流程、填完必填信息之后才会发到首登券。
 	2) 商户可以配置首登券只能在线上或者线下或者两个渠道都可以使用。
 2. 首登券的主业务全都是`会员升级`,`会员升级`主业务下只包含首登券的
-
-### members同步DW.dim_member流程
-> airflow的nr_joowingdw_daily_update_dim_table任务(20 4 * * * )，调用3306.joowingDW.Update_dim_member_online存储过程，取出members表中first_active_tiem>ydate的会员，将这些会员在DW.dim_member中set app_flag=1,app_reg_date=first_active_date
 
 ### 涉及存储过程
 1. Update_dim_member_online (20 4 * * * )   -> dim_member
@@ -105,7 +102,18 @@
 
 	2) 沿用现存逻辑，认定新注册会员一定是受导购影响后注册的非会员。
 
-# 会员升级统计/新会员升级统计 整合方案
+### 数据逻辑变动
+1. 首登券用券会员
+	1) 在history_coupon_histories表里面根据serial_no关联promotion_coupon_definitions，找出buz_id=3的券为首登券。
+	2) 需要修改insert_newmember_used_cp_count的逻辑，不能用会员注册时间和用券时间相关联。在members中找出指定时间段内注册绑定的会员，在history_coupon_histories表中找出大于时间段起点的用券记录，限制券类型为首登券，获得结果即为首登券用券会员数。
+	3) 如果会员是代开卡或者注册后没有登录，同样会发放首登券
+
+2. 非全渠道会员数/到店非全渠道人数
+	1) 修改joowingDW.update_dim_member_online的逻辑，将update_required_time>ydate的会员作为全渠道会员，在dim_member中的app_flag更新为1
+
+3. insert_shops_referee(已更改)
+	1) 券相关数据取基础业务为1的券插入shops_referee表中，应该改为主业务为3
+	2) 会员表和券表关联后只取了注册绑定时间为指定时间当月的会员，应该取消这个限制
 
 ### 全部字段
 1. 商户
@@ -126,20 +134,38 @@
 16. 首登券用券率
 17. 老客升级率
 
-### 数据逻辑变动
-1. 首登券用券会员
-	1) 在history_coupon_histories表里面根据serial_no关联promotion_coupon_definitions，找出buz_id=3的券为首登券。
-	2) 需要修改insert_newmember_used_cp_count的逻辑，不能用会员注册时间和用券时间相关联。在members中找出指定时间段内注册绑定的会员，在history_coupon_histories表中找出大于时间段起点的用券记录，限制券类型为首登券，获得结果即为首登券用券会员数。
-	3) 如果会员是代开卡或者注册后没有登录，同样会发放首登券
+### 需要计算的字段
+1. 手机开卡新会员
+2. 绑定手机老会员
+3. 总升级会员
+4. 首登券用券会员
+5. 非全渠道会员数
+6. 非会员数
+7. 总注册会员数
+8. 转换率
+9. 线上开卡率
+10. 登券用券率
+11. 老客升级率
 
-2. 非全渠道会员数/到店非全渠道人数
-	1) 修改joowingDW.update_dim_member_online的逻辑，将update_required_time>ydate的会员作为全渠道会员，在dim_member中的app_flag更新为1
+### 数据源表
+1. ris_production.members ---> shops_referee
+	> 1,2,3
+2. ris_production.members,pomelo_backend_production.history_coupon_histories ---> newmember_used_cp_count
+    > 4
+3. DW.(fct_sales,dim_member) ---> shop_referee_order_member_count
+    > 5,6
+4. DW.dim_member ---> sum_day_new_member
+    > 7
 
-3. insert_shops_referee(已更改)
-	1) 券相关数据取基础业务为1的券插入shops_referee表中，应该改为主业务为3
-	2) 会员表和券表关联后只取了注册绑定时间为指定时间当月的会员，应该取消这个限制
 
-### 页面查询
+# 会员升级统计/新会员升级统计 正式工作
+
+## 需求背景
+> 这个单子的需求背景仅仅是为了把NB隔日统计报表的“会员升级统计/新会员升级统计”两张报表整合成一张报表。
+
+## 报表设计
+
+#### 页面查询
 1. 按店汇总(开始日期，结束日期，门店)
 > 返回指定门店每家门店在指定时间段内汇总数据
 2. 按天汇总(开始日期，结束日期)
@@ -147,7 +173,7 @@
 3. 按店查询(开始日期，结束日期，门店)
 > 返回指定门店在指定时间段内每天的数据
 
-### 页面展示字段
+#### 页面展示字段
 1. 按店汇总
 
 |门店名称|线上注册会员|线上绑定会员|会员升级总计|首登券用券会员数|非全渠道会员数|非会员数|总注册会员数|转换率|线上开卡率|首登券用券率|老客升级率|
@@ -163,29 +189,7 @@
 |时间|门店名称|线上注册会员|线上绑定会员|会员升级总计|首登券用券会员数|非全渠道会员数|非会员数|总注册会员数|转换率|线上开卡率|首登券用券率|老客升级率|
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 
-### 需要计算的字段
-1. 手机开卡新会员
-2. 绑定手机老会员
-3. 总升级会员
-4. 首登券用券会员
-5. 非全渠道会员数
-6. 非会员数
-7. 总注册会员数
-8. 转换率
-9. 线上开卡率
-10. 登券用券率
-11. 老客升级率
-
-### 数据源表
-1. ris_production.members
-	> 1,2,3
-2. ris_production.members,pomelo_backend_production.history_coupon_histories
-    > 4
-3. DW.(fct_sales,dim_member)
-    > 5,6
-4. DW.dim_member
-    > 7
-    
-### 方案
+ 
+## 方案
 原本的会员升级统计和非会员升级统计是通过两个存储过程，从4张汇总数据表中分别获取数据。现在要改为只有一张会员升级报表，这张会员升级报表包括时间和门店两个维度，每个维度只从一张表中获取数据。
 
