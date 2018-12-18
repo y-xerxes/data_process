@@ -161,7 +161,9 @@
 # 会员升级统计/新会员升级统计 正式工作
 
 ## 需求背景
-> 这个单子的需求背景仅仅是为了把NB隔日统计报表的“会员升级统计/新会员升级统计”两张报表整合成一张报表。
+> 这个单子的需求背景仅仅是为了把NB隔日统计报表的“会员升级统计/新会员升级统计”两张报表整合成一张报表。至于原始需求，应该是为了展现商户在指定时间段内，有多少会员升级为了全渠道会员，有多少非会员通过线上渠道注册成为了会员，有多少线下会员绑定成为了全渠道会员， 
+有多少会员使用了会员升级优惠券，以此来反映商户近期吸引顾客活动的效果。
+
 
 ## 报表设计
 
@@ -184,7 +186,7 @@
 |时间|线上注册会员|线上绑定会员|会员升级总计|首登券用券会员数|非全渠道会员数|非会员数|总注册会员数|转换率|线上开卡率|首登券用券率|老客升级率|
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 
-3. 按天查询
+3. 按店查询
 
 |时间|门店名称|线上注册会员|线上绑定会员|会员升级总计|首登券用券会员数|非全渠道会员数|非会员数|总注册会员数|转换率|线上开卡率|首登券用券率|老客升级率|
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
@@ -193,3 +195,102 @@
 ## 方案
 原本的会员升级统计和非会员升级统计是通过两个存储过程，从4张汇总数据表中分别获取数据。现在要改为只有一张会员升级报表，这张会员升级报表包括时间和门店两个维度，每个维度只从一张表中获取数据。
 
+#### 计算
+    1. 手机开卡新会员
+    2. 绑定手机老会员
+    3. 总升级会员
+```sql
+SELECT 
+     ou.org_code,
+     ou.develop_shop,
+     DATE(ou.first_active_time),
+     COUNT(DISTINCT CASE WHEN ou.user_type = 'bind' THEN member_no ELSE NULL END) AS bind_count,
+     COUNT(DISTINCT CASE WHEN ou.user_type = 'register' THEN member_no ELSE NULL END) AS register_count,
+     COUNT(DISTINCT member_no) AS member_total
+FROM ris_production.members ou
+WHERE org_code='{0}' and state = 'active'
+AND ou.first_active_time BETWEEN '{1}' and '{2}'
+GROUP BY ou.org_code, ou.develop_shop,DATE(ou.first_active_time)
+```
+
+    4. 首登券用券会员
+```sql
+SELECT 
+    org_code AS org_code,
+    develop_shop AS develop_shop_id,
+    DATE(first_active_time) AS first_active_date,
+    member_no 
+FROM ris_production.members 
+WHERE org_code='{0}' AND state='active' 
+AND first_active_time BETWEEN '{1}' and '{2}'
+```
+```sql
+SELECT
+    member_no, 
+    serial_no 
+FROM 
+    pomelo_backend_production.history_coupon_histories 
+WHERE 
+    org_code = 'yyplan' 
+    AND used_date BETWEEN '2018-12-15' 
+    AND SUBDATE(CURDATE(), 1) 
+```
+```sql
+SELECT
+    serial_no
+FROM
+    pomelo_backend_production.promotion_coupon_definitions 
+WHERE
+    org_code = 'yyplan' 
+    AND buz_id = '3'
+```
+
+    5. 非全渠道会员数
+    6. 非会员数
+```sql
+# main sql
+ select 
+		"yyplan",
+		f.dim_date_id, 
+		s.shop_code,
+		count(DISTINCT case when f.dim_member_id>0  then f.dim_member_id else NULL end) member_num,
+		count(DISTINCT case when f.dim_member_id=0  then order_no else NULL end) dis_reg_order,
+		count(DISTINCT case when m.app_flag=1  then f.dim_member_id else NULL end) bind_member
+ from (
+			 SELECT 
+						dim_date_id,
+						dim_shop_id,
+						dim_member_id,
+						order_no
+			 FROM yyplandw.fct_sales a
+			 where dim_date_id between 20181215 and 20181217 
+			 group by order_no,dim_date_id,dim_shop_id,dim_member_id
+			) f 
+	inner join yyplandw.dim_member m on f.dim_member_id=m.dim_member_id 
+	inner join yyplandw.dim_shop s on f.dim_shop_id=s.dim_shop_id 
+	group by f.dim_date_id, s.shop_code;
+```
+```sql
+SELECT 
+    dim_date_id,
+    dim_shop_id,
+    dim_member_id,
+    order_no
+FROM yyplandw.fct_sales a
+where dim_date_id between 20181215 and 20181217 
+group by order_no,dim_date_id,dim_shop_id,dim_member_id
+```
+```sql
+SELECT
+	dim_member_id, 
+	app_flag
+FROM
+	yyplandw.dim_member
+```
+```sql
+SELECT
+    dim_shop_id, 
+    shop_code
+FROM
+    yyplandw.dim_shop
+```
