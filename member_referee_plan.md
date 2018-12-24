@@ -142,10 +142,13 @@
 5. 非全渠道会员数
 6. 非会员数
 7. 总注册会员数
-8. 转换率
-9. 线上开卡率
-10. 登券用券率
-11. 老客升级率
+8. 线下小票数
+9. 到店消费人次
+10. 到店非全渠道人次
+11. 转换率
+12. 线上开卡率
+13. 登券用券率
+14. 老客升级率
 
 ### 数据源表
 1. ris_production.members ---> shops_referee
@@ -153,7 +156,7 @@
 2. ris_production.members,pomelo_backend_production.history_coupon_histories ---> newmember_used_cp_count
     > 4
 3. DW.(fct_sales,dim_member) ---> shop_referee_order_member_count
-    > 5,6
+    > 5,6,8,9,10
 4. DW.dim_member ---> sum_day_new_member
     > 7
 
@@ -215,6 +218,43 @@ GROUP BY ou.org_code, ou.develop_shop,DATE(ou.first_active_time)
 
     4. 首登券用券会员
 ```sql
+# main sql
+select org_code,develop_shop_id,first_active_date,count(DISTINCT t1.member_no) from 
+(
+SELECT 
+    org_code AS org_code,
+    develop_shop AS develop_shop_id,
+    DATE(first_active_time) AS first_active_date,
+    member_no 
+FROM ris_production.members 
+WHERE org_code='yyplan' AND state='active' 
+AND first_active_time BETWEEN '2018-12-14' and '2018-12-20'
+) t1
+inner join (
+select member_no from 
+(
+SELECT
+    member_no, 
+    serial_no 
+FROM 
+    pomelo_backend_production.history_coupon_histories 
+WHERE 
+    org_code = 'yyplan' 
+    AND used_date BETWEEN '2018-12-14'  AND '2018-12-20' 
+) c
+inner join (
+SELECT
+    serial_no
+FROM
+    pomelo_backend_production.promotion_coupon_definitions 
+WHERE
+    org_code = 'yyplan' 
+    AND buz_id = '3'
+) d on c.serial_no=d.serial_no) t2 
+on t1.member_no=t2.member_no
+group by org_code,develop_shop_id,first_active_date
+```
+```sql
 SELECT 
     org_code AS org_code,
     develop_shop AS develop_shop_id,
@@ -247,6 +287,9 @@ WHERE
 
     5. 非全渠道会员数
     6. 非会员数
+    8. 线下小票数
+    9. 到店消费人次
+    10. 到店非全渠道人次
 ```sql
 # main sql
  select 
@@ -293,4 +336,19 @@ SELECT
     shop_code
 FROM
     yyplandw.dim_shop
+```
+
+    7. 总注册会员数
+```sql
+# main sql
+SELECT
+	create_date,
+	shop_id,
+	count( DISTINCT dim_member_id ) 
+FROM
+	( SELECT dim_member_id, create_date, reg_shop_code FROM yyplandw.dim_member WHERE create_date BETWEEN '2018-12-15' AND '2018-12-17' AND normal_member = 1 ) t1
+	LEFT JOIN ( SELECT shop_id, shop_code, shop_name FROM ris_production.org_shop WHERE org_code = 'yyplan' ) t2 ON t1.reg_shop_code = t2.shop_code 
+GROUP BY
+	create_date,
+	shop_id
 ```
