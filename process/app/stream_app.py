@@ -4,9 +4,12 @@ from typing import List
 from pyspark import RDD
 
 from process.app.application import DataApplication
+from process.buz.base.data_fetcher import ShopDetailFetcher
 from process.buz.retailer_statistics.stage import PrtSaleToFctOrders
+from process.spark.context import Context
 from process.util.cache_support import DailyCache, ContextCache
 from process.util.data_transfer import RetailerDatabaseContext
+from process.util.database_rdd_generator import DatabaseRddGenerator
 from process.util.spark_util import SparkUtil
 
 
@@ -41,13 +44,6 @@ class StreamApp(DataApplication):
                 PrtSaleToFctOrders(data_context=self.data_context,
                                    retailer_database_contexts=retailer_database_contexts,
                                    dim_date_id=dim_date_id).execute()
-
-
-                sales_rdd = context_cache.cache(sales_rdd)
-                if sales_rdd is None:
-                    context_cache.clear()
-                    should_retry = False
-                    return True
 
 
             except Exception as error:
@@ -123,7 +119,7 @@ global_config = {"buz": {"host": "", "port": 3306, "password": "", "username": "
                                    "username": "datadev"},
                  "datax_service_host": ""}
 generator = DatabaseRddGenerator(global_config, spark)
-jw_context = JwContext(spark=spark, config=global_config, generator=generator)
+jw_context = Context(spark=spark, config=global_config, generator=generator)
 retailer_details = [{"org_code": "mtyunzhiai", "dw_name": "mtyunzhiaidw"}]
 stream_app = StreamApp(jw_context=jw_context)
 stream_app.execute(retailer_details)

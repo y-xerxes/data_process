@@ -9,9 +9,9 @@ from pyspark.sql import SparkSession
 from process.util.util import prefixed_name
 
 
-class JwNormalContext(object):
+class NormalContext(object):
     def __init__(self, config):
-        super(JwNormalContext, self).__init__()
+        super(NormalContext, self).__init__()
         self.config = config
         self.hdfs_client = Client(url=";".join(config["hdfs"]["name_node"]), proxy='joowing')
         self.env_prefix = config.get("prefix", None)
@@ -29,17 +29,17 @@ class JwNormalContext(object):
         return prefixed_name(name, self.env_prefix)
 
 
-class JwContext(JwNormalContext):
+class Context(NormalContext):
     def __init__(self, spark, config, generator):
         # type: (SparkSession, dict, DatabaseRddGenerator) -> None
-        super(JwContext, self).__init__(config=config)
+        super(Context, self).__init__(config=config)
         self.spark = spark
         self.generator = generator
 
 
-class JwRetailerContext(JwContext):
+class RetailerContext(Context):
     def __init__(self, jw_context, org_code, dw_name):
-        super(JwRetailerContext, self).__init__(spark=jw_context.spark,
+        super(RetailerContext, self).__init__(spark=jw_context.spark,
                                                 config=jw_context.config,
                                                 generator=jw_context.generator)
         self.org_code = org_code

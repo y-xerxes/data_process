@@ -7,6 +7,19 @@ from typing import Union, List, Dict
 from pyspark import RDD, SparkContext
 from pyspark.sql import DataFrame
 
+from process.spark.context import RetailerContext
+
+
+class DataFetcher:
+    fetcher_name = "must defined in subclass"
+
+    # noinspection PyMethodMayBeStatic,PyUnusedLocal
+    def fetch(self,
+              dim_date_id: int,
+              name: str,
+              retailer_context: RetailerContext,
+              daily_cache: 'DailyCache') -> Union[RDD, DataFrame, None]:
+        return None
 
 
 class DailyCache(object):
@@ -28,6 +41,15 @@ class DailyCache(object):
         self.data_context = data_context
         self.cached_rd = {}
         self.data_fetchers = {}
+
+    def register(self, rdd_fetcher: DataFetcher, name: str=None) -> 'DailyCache':
+        if name is None:
+            name = rdd_fetcher.fetcher_name
+
+        if name not in self.data_fetchers.keys():
+            self.data_fetchers[name] = rdd_fetcher
+
+        return self
 
 
 class ContextCache(object):
