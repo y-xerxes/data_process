@@ -7,6 +7,7 @@ from process.app.application import DataApplication
 from process.buz.retailer_statistics.stage import PrtSaleToFctOrders
 from process.util.cache_support import DailyCache, ContextCache
 from process.util.data_transfer import RetailerDatabaseContext
+from process.util.spark_util import SparkUtil
 
 
 class StreamApp(DataApplication):
@@ -16,6 +17,7 @@ class StreamApp(DataApplication):
     def __init__(self, **kwargs):
         super(StreamApp, self).__init__(**kwargs)
         self.daily_cache = DailyCache(data_context=self.data_context)
+        self._prepare_data_fetchers()
 
     def execute(self, retailer_details):
         sales_rdd = None
@@ -91,3 +93,37 @@ class StreamApp(DataApplication):
                 gc.collect()
 
         return True
+
+    def _prepare_data_fetchers(self):
+        """
+        针对业务场景, 准备合适的DataFetcher
+        :return:
+        """
+        self.daily_cache.register(ShopDetailFetcher())
+
+
+spark = SparkUtil.get_spark()
+global_config = {"buz": {"host": "", "port": 3306, "password": "", "username": ""},
+                 "hdfs": {"name_node": ["", ""]},
+                 "hive": {"host": "", "port": 10000},
+                 "livy": {"address": ""},
+                 "kafka": {"bootstrap_servers": ["", ""]},
+                 "redis": {"host": "", "port": 6379},
+                 "rabbitmq": {"host": "", "pass": "", "port": "", "user": "", "vhost": ""},
+                 "retailer": {"host": "222.73.36.230", "port": 3336, "password": "datadev!v33.6",
+                              "username": "datadev"},
+                 "real_time": {"host": "222.73.36.230", "port": 3337, "password": "datadev!v33.7",
+                               "username": "datadev"},
+                 "site_name": "",
+                 "buz_mongodb": {"hosts": ["", "", ""]},
+                 "maintenance": {"host": "222.73.36.230", "port": 3337, "password": "datadev!v33.7",
+                                 "username": "datadev", "database_name": "database_service_maintenance"},
+                 "rdb_ib_host": "",
+                 "non_real_time": {"host": "222.73.36.230", "port": 3336, "password": "datadev!v33.6",
+                                   "username": "datadev"},
+                 "datax_service_host": ""}
+generator = DatabaseRddGenerator(global_config, spark)
+jw_context = JwContext(spark=spark, config=global_config, generator=generator)
+retailer_details = [{"org_code": "mtyunzhiai", "dw_name": "mtyunzhiaidw"}]
+stream_app = StreamApp(jw_context=jw_context)
+stream_app.execute(retailer_details)
